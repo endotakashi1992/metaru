@@ -1,3 +1,5 @@
+var PORT = process.env.PORT || 3000
+
 var MetaInspector = require('node-metainspector');
 
 
@@ -5,7 +7,8 @@ var express = require('express')
 var app = express()
 
 
-
+var corser = require("corser");
+app.use(corser.create());
 
 
 function simpleStringify (object){
