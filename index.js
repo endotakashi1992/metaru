@@ -41,6 +41,9 @@ app.get('/', function (req, res) {
       })
       console.log(simpleStringify(result))
       result = simpleStringify(result)
+      if(req.query.tag){
+        result = result[req.query.tag]
+      }
       res.send(result)
 
     });
@@ -54,4 +57,4 @@ app.get('/', function (req, res) {
 
 })
 
-app.listen(3000)
+app.listen(PORT)
